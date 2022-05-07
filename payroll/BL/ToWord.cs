@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WageSys.BL
+namespace payroll.BL
 {
     class ToWord
     {
@@ -66,7 +66,7 @@ namespace WageSys.BL
         /// <param name="currency">Currency to use</param>
         public ToWord(Decimal number, CurrencyInfo currency)
         {
-            InitializeClass(number, currency, String.Empty, "only.", "فقط", "لا غير");
+            InitializeClass(number, currency, String.Empty, "only.", "فقط", "لا غير.");
         }
 
         /// <summary>
