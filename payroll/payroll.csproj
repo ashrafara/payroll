@@ -320,6 +320,18 @@
     <Compile Include="reports\expense_report_view.Designer.cs">
       <DependentUpon>expense_report_view.cs</DependentUpon>
     </Compile>
+    <Compile Include="reports\jihadnegativity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>jihadnegativity.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\jihadneg_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports\jihadneg_report.Designer.cs">
+      <DependentUpon>jihadneg_report.cs</DependentUpon>
+    </Compile>
     <Compile Include="reports\jihad_report.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -368,17 +380,41 @@
     <Compile Include="reports\salarycard_viewcs.Designer.cs">
       <DependentUpon>salarycard_viewcs.cs</DependentUpon>
     </Compile>
+    <Compile Include="reports\socailnegativity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>socailnegativity.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="reports\socail_report.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="reports\socail_report.Designer.cs">
       <DependentUpon>socail_report.cs</DependentUpon>
     </Compile>
+    <Compile Include="reports\socialneg_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports\socialneg_report.Designer.cs">
+      <DependentUpon>socialneg_report.cs</DependentUpon>
+    </Compile>
     <Compile Include="reports\social_report_view.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>social_report_view.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\solidaritynegativity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>solidaritynegativity.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\solidarityneg_report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reports\solidarityneg_report.Designer.cs">
+      <DependentUpon>solidarityneg_report.cs</DependentUpon>
     </Compile>
     <Compile Include="reports\solidarity_report.cs">
       <AutoGen>True</AutoGen>
@@ -522,7 +558,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reports\analyis_report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>analyis_report.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="reports\analyis_report_view.resx">
       <DependentUpon>analyis_report_view.cs</DependentUpon>
@@ -552,6 +587,13 @@
     <EmbeddedResource Include="reports\expense_report_view.resx">
       <DependentUpon>expense_report_view.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reports\jihadnegativity.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>jihadnegativity.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\jihadneg_report.resx">
+      <DependentUpon>jihadneg_report.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reports\jihad_report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>jihad_report.cs</LastGenOutput>
@@ -580,12 +622,26 @@
     <EmbeddedResource Include="reports\salarycard_viewcs.resx">
       <DependentUpon>salarycard_viewcs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reports\socailnegativity.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>socailnegativity.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="reports\socail_report.resx">
       <DependentUpon>socail_report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\socialneg_report.resx">
+      <DependentUpon>socialneg_report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reports\social_report_view.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>social_report_view.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\solidaritynegativity.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>solidaritynegativity.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\solidarityneg_report.resx">
+      <DependentUpon>solidarityneg_report.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reports\solidarity_report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

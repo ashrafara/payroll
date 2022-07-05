@@ -210,5 +210,23 @@ namespace payroll
             reportft.payroll_report db = new reportft.payroll_report();
             db.ShowDialog();
         }
+
+        private void الضمانالاجتماعيToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reports.socialneg_report db = new reports.socialneg_report();
+            db.ShowDialog();
+        }
+
+        private void التضامنالاجتماعيToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reports.solidarityneg_report db = new reports.solidarityneg_report();
+            db.ShowDialog();
+        }
+
+        private void الجهادToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            reports.jihadneg_report db = new reports.jihadneg_report();
+            db.ShowDialog();
+        }
     }
 }

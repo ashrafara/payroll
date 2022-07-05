@@ -69,6 +69,10 @@
             this.استمارةالمرتبToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.حافظةالمرتبToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.العلاواتالسنويةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الشهائدالسلبيةToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الضمانالاجتماعيToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.التضامنالاجتماعيToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.الجهادToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -241,7 +245,8 @@
             this.حافظةالمرتبToolStripMenuItem,
             this.شهادةمرتبToolStripMenuItem,
             this.بطاقةمرتبToolStripMenuItem,
-            this.الكشفالتجميعيToolStripMenuItem});
+            this.الكشفالتجميعيToolStripMenuItem,
+            this.الشهائدالسلبيةToolStripMenuItem});
             this.التقاريرToolStripMenuItem.Name = "التقاريرToolStripMenuItem";
             this.التقاريرToolStripMenuItem.Size = new System.Drawing.Size(69, 27);
             this.التقاريرToolStripMenuItem.Text = "التقارير";
@@ -394,6 +399,37 @@
             this.العلاواتالسنويةToolStripMenuItem.Text = "العلاوات السنوية";
             this.العلاواتالسنويةToolStripMenuItem.Click += new System.EventHandler(this.العلاواتالسنويةToolStripMenuItem_Click);
             // 
+            // الشهائدالسلبيةToolStripMenuItem
+            // 
+            this.الشهائدالسلبيةToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.الضمانالاجتماعيToolStripMenuItem,
+            this.التضامنالاجتماعيToolStripMenuItem,
+            this.الجهادToolStripMenuItem2});
+            this.الشهائدالسلبيةToolStripMenuItem.Name = "الشهائدالسلبيةToolStripMenuItem";
+            this.الشهائدالسلبيةToolStripMenuItem.Size = new System.Drawing.Size(271, 28);
+            this.الشهائدالسلبيةToolStripMenuItem.Text = "الشهائد السلبية ";
+            // 
+            // الضمانالاجتماعيToolStripMenuItem
+            // 
+            this.الضمانالاجتماعيToolStripMenuItem.Name = "الضمانالاجتماعيToolStripMenuItem";
+            this.الضمانالاجتماعيToolStripMenuItem.Size = new System.Drawing.Size(199, 28);
+            this.الضمانالاجتماعيToolStripMenuItem.Text = "الضمان الاجتماعي";
+            this.الضمانالاجتماعيToolStripMenuItem.Click += new System.EventHandler(this.الضمانالاجتماعيToolStripMenuItem_Click);
+            // 
+            // التضامنالاجتماعيToolStripMenuItem
+            // 
+            this.التضامنالاجتماعيToolStripMenuItem.Name = "التضامنالاجتماعيToolStripMenuItem";
+            this.التضامنالاجتماعيToolStripMenuItem.Size = new System.Drawing.Size(199, 28);
+            this.التضامنالاجتماعيToolStripMenuItem.Text = "التضامن الاجتماعي";
+            this.التضامنالاجتماعيToolStripMenuItem.Click += new System.EventHandler(this.التضامنالاجتماعيToolStripMenuItem_Click);
+            // 
+            // الجهادToolStripMenuItem2
+            // 
+            this.الجهادToolStripMenuItem2.Name = "الجهادToolStripMenuItem2";
+            this.الجهادToolStripMenuItem2.Size = new System.Drawing.Size(199, 28);
+            this.الجهادToolStripMenuItem2.Text = "الجهاد";
+            this.الجهادToolStripMenuItem2.Click += new System.EventHandler(this.الجهادToolStripMenuItem2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -457,6 +493,10 @@
         private System.Windows.Forms.ToolStripMenuItem اضافةمصرفوفرعToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem تعديلالمصرفوالفرعToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem عرضالمصارفوالفروعToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الشهائدالسلبيةToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الضمانالاجتماعيToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem التضامنالاجتماعيToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem الجهادToolStripMenuItem2;
     }
 }
 
