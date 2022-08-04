@@ -123,7 +123,7 @@
             this.groupBox6.Controls.Add(this.label17);
             this.groupBox6.Controls.Add(this.label5);
             this.groupBox6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(699, 336);
+            this.groupBox6.Location = new System.Drawing.Point(698, 303);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(422, 75);
             this.groupBox6.TabIndex = 36;

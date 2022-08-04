@@ -20,20 +20,27 @@ namespace payroll.reports
         {
             InitializeComponent();
 
-            var emplpy = (from c in db.Banks
-                          select new
-                          {
-                              c.mainBank,
-                              c.branchBank,
-                              c.bankId
-                          }).ToList();
-            comboBox1.DataSource = emplpy.ToList();
-            comboBox1.DisplayMember = "mainBank";
-            comboBox1.ValueMember = "bankId";
+            //var emplpy = (from c in db.Banks
+            //              select new
+            //              {
+            //                  c.mainBank,
+            //                  c.branchBank,
+            //                  c.bankId
+            //              }).ToList();
+            comboBox1.DataSource = db.Banks.GroupBy(x => new { x.mainBank })
+                .Select( b => new 
+                {
+                    b.Key.mainBank,
+                   
+                }).ToList();
 
-            comboBox2.DataSource = emplpy.ToList();
-            comboBox2.DisplayMember = "branchBank";
-            comboBox2.ValueMember = "bankId";
+
+            comboBox1.DisplayMember = "mainBank";
+            comboBox1.ValueMember = "mainBank";
+            comboBox1.SelectedIndex = 0;
+            //comboBox2.DataSource = emplpy.ToList();
+            //comboBox2.DisplayMember = "branchBank";
+            //comboBox2.ValueMember = "bankId";
 
         }
 
@@ -49,9 +56,25 @@ namespace payroll.reports
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBox2.SelectedItem = comboBox1.SelectedItem;
+            try
+            {
+                var emplpy = (from c in db.Banks
+                              where c.mainBank == (string)comboBox1.SelectedValue
+                              select new
+                              {
+                                  c.mainBank,
+                                  c.branchBank,
+                                  c.bankId
+                              }
+                               ).ToList();
+                comboBox2.DataSource = emplpy.ToList();
+                comboBox2.DisplayMember = "branchBank";
+                comboBox2.ValueMember = "bankId";
+            }
+            catch
+            { }
 
-         }
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -67,7 +90,7 @@ namespace payroll.reports
                 rpt.SetDatabaseLogon("sa", "ali123", "localhost", "payroll");
                 rpt.SetParameterValue("salaryMonth", textBox1.Text.ToString());
                 rpt.SetParameterValue("salarayyear", textBox2.Text.ToString());
-                rpt.SetParameterValue("bankId", comboBox1.SelectedValue);
+                rpt.SetParameterValue("bankId", comboBox2.SelectedValue);
                 crystalReportViewer1.ReportSource = rpt;
             }
 

@@ -272,6 +272,11 @@
       <DependentUpon>analyis_report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="reports\analyis_report1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>analyis_report.rpt</DependentUpon>
+    </Compile>
     <Compile Include="reports\analyis_report_view.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -558,6 +563,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reports\analyis_report.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>analyis_report1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="reports\analyis_report_view.resx">
       <DependentUpon>analyis_report_view.cs</DependentUpon>
