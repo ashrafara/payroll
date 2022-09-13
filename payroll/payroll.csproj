@@ -272,11 +272,6 @@
       <DependentUpon>analyis_report.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="reports\analyis_report1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>analyis_report.rpt</DependentUpon>
-    </Compile>
     <Compile Include="reports\analyis_report_view.cs">
       <SubType>Form</SubType>
     </Compile>

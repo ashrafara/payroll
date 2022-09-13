@@ -78,7 +78,7 @@ namespace payroll.reports
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" || textBox2.Text == "")
+            if (textBox1.Text == "" || textBox2.Text == "" || comboBox2.SelectedValue == null)
             {
                 MessageBox.Show("الرجاء تعبئة الخانات الفارغة");
             }

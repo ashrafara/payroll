@@ -20,6 +20,7 @@ namespace payroll.Main
         private double committee;
         List<CurrencyInfo> currencies = new List<CurrencyInfo>();
         private double salaryAbsentDay;
+        private double addextratime;
 
         public AddSalary()
         {
@@ -140,7 +141,8 @@ namespace payroll.Main
                     salaryDate = Convert.ToDateTime(dateTimePicker1.Text),
                     salaryAbsentDay= string.IsNullOrEmpty(txtAbsentDay.Text) ? (int?)0 : Convert.ToInt32(txtAbsentDay.Text),
                     salaryletter= txtArabicWord.Text,
-                    absentamount = string.IsNullOrEmpty(txtabsentamount.Text) ? (double?)0 : double.Parse(txtabsentamount.Text)
+                    absentamount = string.IsNullOrEmpty(txtabsentamount.Text) ? (double?)0 : double.Parse(txtabsentamount.Text),
+                    addextratime= string.IsNullOrEmpty(txtextra.Text) ? (double?)0 : double.Parse(txtextra.Text)
 
                 };
                 db.SalaryLogs.Add(salary);
@@ -187,6 +189,12 @@ namespace payroll.Main
                 double allowanceSecondment = Math.Truncate(BasicSalary * 100)/1000;
                 txtallowanceSecondment.Text = allowanceSecondment.ToString();
 
+                double extratime;
+                if (double.TryParse(txtextra.Text, out extratime))
+                {
+                    addextratime += extratime;
+                }
+
                 double amount;
 
                 if (double.TryParse(txtallowanceDelay.Text, out amount))
@@ -207,7 +215,7 @@ namespace payroll.Main
                 double TotalAllowanace = allowanceSecondment + amount + committeamount;
                 txtTotalAllowanace.Text = TotalAllowanace.ToString();
 
-                double TotalSalary = BasicSalary + allowanceSecondment + amount + committeamount;
+                double TotalSalary = BasicSalary + allowanceSecondment + amount + committeamount + extratime;
                 txtTotalSalary.Text = TotalSalary.ToString();
 
                 double SocialSecurityTax = Math.Truncate(TotalSalary * 37.5)/1000;
@@ -236,6 +244,87 @@ namespace payroll.Main
                 double salaryTotalContribution = salarysalaryWorkContribution + salaryTreasurContribution;
                 txtsalaryTotalContribution.Text = salaryTotalContribution.ToString();
             }
+            if (empType.ToString() == "موفد")
+            {
+                txtallowanceSecondment.Visible = false;
+
+                double bounsamonut = double.Parse(bounsamounts.ToString());
+
+                double bounsno = double.Parse(bounss.ToString());
+
+                double bouns = bounsamonut * bounsno;
+
+                double BasicSalary = double.Parse(degreeamounts.ToString()) + bouns;
+                txtBasicSalary.Text = BasicSalary.ToString();
+
+                double allowanceSecondment = BasicSalary * 0.0;
+                txtallowanceSecondment.Text = allowanceSecondment.ToString();
+
+                double wg = BasicSalary / 30;
+                double wage = Math.Truncate(wg * 1000) / 1000;
+                txtWage.Text = wage.ToString();
+
+                double extratime;
+                if (double.TryParse(txtextra.Text, out extratime))
+                {
+                    addextratime += extratime;
+                }
+
+                double amount;
+                if (double.TryParse(txtallowanceDelay.Text, out amount))
+                {
+                    allowanceDelay += amount;
+                }
+
+                double committeamount;
+                if (double.TryParse(txtcommittee.Text, out committeamount))
+                {
+                    committee += committeamount;
+                }
+
+                double AbsentDay;
+                if (double.TryParse(txtAbsentDay.Text, out AbsentDay))
+                {
+                    salaryAbsentDay += AbsentDay;
+                }
+
+                double ab = (wage * AbsentDay);
+                double absentamount = Math.Truncate(ab * 1000) / 1000;
+                txtabsentamount.Text = absentamount.ToString();
+
+                double TotalAllowanace = amount + committeamount + extratime;
+                txtTotalAllowanace.Text = TotalAllowanace.ToString();
+
+                double TotalSalary = ((BasicSalary + amount + committeamount)*0.25);
+                txtTotalSalary.Text = TotalSalary.ToString();
+
+                double SocialSecurityTax = Math.Truncate(TotalSalary * 37.5) / 1000;
+                txtSocialSecurityTax.Text = SocialSecurityTax.ToString();
+
+                double solidarityTax = Math.Truncate(TotalSalary * 10) / 1000;
+                txtsolidarityTax.Text = solidarityTax.ToString();
+
+                double jdi = SocialSecurityTax + solidarityTax;
+                double jd = TotalSalary - jdi;
+                double JihadTax = Math.Truncate(jd * 30) / 1000;
+                txtJihadTax.Text = JihadTax.ToString();
+
+                double TotalTaxes = SocialSecurityTax + solidarityTax + JihadTax + absentamount;
+                txtTotalTaxes.Text = TotalTaxes.ToString();
+
+                double NetSalary = TotalSalary - TotalTaxes;
+                txtNetSalary.Text = NetSalary.ToString();
+
+                double salarysalaryWorkContribution = Math.Truncate(TotalSalary * 105) / 1000;
+                txtsalarysalaryWorkContribution.Text = salarysalaryWorkContribution.ToString();
+
+                double salaryTreasurContribution = Math.Truncate(TotalSalary * 7.5) / 1000;
+                txtsalaryTreasurContribution.Text = salaryTreasurContribution.ToString();
+
+                double salaryTotalContribution = salarysalaryWorkContribution + salaryTreasurContribution;
+                txtsalaryTotalContribution.Text = salaryTotalContribution.ToString();
+
+            }
             else
             {
                 txtallowanceSecondment.Visible = false;
@@ -255,6 +344,13 @@ namespace payroll.Main
                 double wg = BasicSalary / 30;
                 double wage = Math.Truncate( wg* 1000)/1000;
                 txtWage.Text = wage.ToString();
+
+
+                double extratime;
+                if (double.TryParse(txtextra.Text, out extratime))
+                {
+                    addextratime += extratime;
+                }
 
                 double amount;
                 if (double.TryParse(txtallowanceDelay.Text, out amount))
@@ -278,10 +374,10 @@ namespace payroll.Main
                 double absentamount = Math.Truncate( ab* 1000) / 1000;
                 txtabsentamount.Text = absentamount.ToString();
 
-                double TotalAllowanace = amount + committeamount;
+                double TotalAllowanace = amount + committeamount + extratime;
                 txtTotalAllowanace.Text = TotalAllowanace.ToString();
 
-                double TotalSalary= BasicSalary + amount + committeamount;
+                double TotalSalary= BasicSalary + amount + committeamount + extratime;
                 txtTotalSalary.Text = TotalSalary.ToString();
 
                 double SocialSecurityTax = Math.Truncate(TotalSalary * 37.5)/1000;
@@ -388,6 +484,11 @@ namespace payroll.Main
         }
 
         private void txtArabicWord_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtabsentamount_TextChanged(object sender, EventArgs e)
         {
 
         }

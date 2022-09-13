@@ -57,6 +57,8 @@ namespace payroll
         [StringLength(250)]
         public string salaryletter { get; set; }
 
+        public double? addextratime { get; set; }
+
         public virtual Employee Employee { get; set; }
     }
 }

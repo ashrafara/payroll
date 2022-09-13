@@ -94,6 +94,8 @@
             this.txtyear = new System.Windows.Forms.TextBox();
             this.cboCurrency = new System.Windows.Forms.ComboBox();
             this.txtArabicWord = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txtextra = new System.Windows.Forms.TextBox();
             this.groupBox6.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -326,18 +328,20 @@
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.LightYellow;
+            this.groupBox4.Controls.Add(this.txtextra);
             this.groupBox4.Controls.Add(this.txtabsentamount);
             this.groupBox4.Controls.Add(this.txtcommittee);
             this.groupBox4.Controls.Add(this.txtAbsentDay);
             this.groupBox4.Controls.Add(this.txtallowanceDelay);
+            this.groupBox4.Controls.Add(this.label27);
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.label19);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(185, 172);
+            this.groupBox4.Location = new System.Drawing.Point(185, 139);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(253, 159);
+            this.groupBox4.Size = new System.Drawing.Size(253, 192);
             this.groupBox4.TabIndex = 32;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "المدخلات";
@@ -349,6 +353,7 @@
             this.txtabsentamount.Size = new System.Drawing.Size(105, 27);
             this.txtabsentamount.TabIndex = 6;
             this.txtabsentamount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtabsentamount.TextChanged += new System.EventHandler(this.txtabsentamount_TextChanged);
             // 
             // txtcommittee
             // 
@@ -569,10 +574,10 @@
             // 
             this.txtallowanceSecondment.Enabled = false;
             this.txtallowanceSecondment.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtallowanceSecondment.Location = new System.Drawing.Point(26, 73);
+            this.txtallowanceSecondment.Location = new System.Drawing.Point(23, 68);
             this.txtallowanceSecondment.Name = "txtallowanceSecondment";
             this.txtallowanceSecondment.ReadOnly = true;
-            this.txtallowanceSecondment.Size = new System.Drawing.Size(117, 27);
+            this.txtallowanceSecondment.Size = new System.Drawing.Size(120, 27);
             this.txtallowanceSecondment.TabIndex = 2;
             this.txtallowanceSecondment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -591,7 +596,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(146, 81);
+            this.label15.Location = new System.Drawing.Point(146, 76);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(76, 19);
             this.label15.TabIndex = 0;
@@ -846,6 +851,25 @@
             this.txtArabicWord.TabIndex = 41;
             this.txtArabicWord.TextChanged += new System.EventHandler(this.txtArabicWord_TextChanged);
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Navy;
+            this.label27.Location = new System.Drawing.Point(133, 160);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(82, 19);
+            this.label27.TabIndex = 0;
+            this.label27.Text = "العمل الاضافي";
+            // 
+            // txtextra
+            // 
+            this.txtextra.Location = new System.Drawing.Point(22, 157);
+            this.txtextra.Name = "txtextra";
+            this.txtextra.Size = new System.Drawing.Size(105, 27);
+            this.txtextra.TabIndex = 7;
+            this.txtextra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // AddSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -930,7 +954,6 @@
         private System.Windows.Forms.TextBox txtallowanceSecondment;
         private System.Windows.Forms.TextBox txtBasicSalary;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ComboBox cbdegree;
         private System.Windows.Forms.ComboBox cbannualBounsId;
@@ -956,5 +979,8 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtextra;
+        private System.Windows.Forms.Label label27;
     }
 }
